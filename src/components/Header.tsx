@@ -18,8 +18,7 @@ export default () => {
             <div>
                 <nav>
                 {
-                show && 
-                    <div className={styles.navbarSecond}>
+                    <div id="navbar" className={`${styles.navbarSecond} ${ show ? styles.active: ''}`}>
                         <br></br>
                         <div className={styles.navbarTexts}>
                             <a className={styles.navbarText} href="#">Home</a>
@@ -29,13 +28,13 @@ export default () => {
                             <a className={styles.navbarText} href="#">Contact</a>
                         </div>
                         <div>
-                            <button className="x" onClick={exit}>X</button>
+                            <button className={styles.xbutton} onClick={exit}>X</button>
                         </div>
                     </div>
                 }
                 <div className={styles.navbar}>
-                <span ><img onClick={func} src="toggle-icon.png" alt="logo"/></span>
-                    <a  href="index.html"><img src="logo.png"/></a>
+                <span style={{cursor: 'pointer'}}><img onClick={func}  src="toggle-icon.png" alt="logo"/></span>
+                    <a href="index.html"><img src="logo.png"/></a>
                     <form>
                         <div>
                             <a className={styles.navbarA} href="#"><img src="user-icon.png"/></a>
