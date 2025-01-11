@@ -1,3 +1,46 @@
+/* Define the keyframe animations */
+@-webkit-keyframes left-to-right {
+  from { left: 0; }
+  to { left: 100vw; }
+}
+
+@-webkit-keyframes right-to-left {
+  0% { left: 100vw; z-index: 1;}  
+  50% { left: -100vw; z-index: -999; }  
+  100% { left: 0; } 
+}
+
+@keyframes left-to-right {
+  from { left: 0; }
+  to { left: 100vw }
+}
+
+@keyframes right-to-left {
+  0% { left: 100vw; z-index: 1;}  
+  50% { left: -100vw; z-index: -999;}  
+  100% { left: 0;}  
+}
+
+.helperDiv {
+display: flex;
+position: relative;
+overflow: hidden;
+transition: none;
+}
+
+.helperDiv.active {
+animation: left-to-right 2s ease-in-out forwards;
+-webkit-animation: left-to-right 2s ease-in-out forwards;
+}
+
+.helperDiv.exit {
+animation: right-to-left 2s ease-in-out forwards;
+-webkit-animation: right-to-left 2s ease-in-out forwards;
+}
+
+
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -59,6 +102,16 @@
 .xbutton:hover {
   color: #f77f57;
 }
+.helperDiv {
+  position: relative;
+}
+
+.helperDiv .absoluteChild {
+  position: absolute;
+  left: 0;
+  right: 0; /* Ensure this doesn't extend beyond the container */
+}
+
 .Carousel {
   display: flex;
   justify-content: center;
