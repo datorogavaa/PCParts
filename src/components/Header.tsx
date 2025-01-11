@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styles from "@/styles/Home.module.css"
+import Link from "next/link"
 export default () => {
 
     // show/hide useState
@@ -21,11 +22,11 @@ export default () => {
                     <div id="navbar" className={`${styles.navbarSecond} ${ show ? styles.active: ''}`}>
                         <br></br>
                         <div className={styles.navbarTexts}>
-                            <a className={styles.navbarText} href="#">Home</a>
-                            <a className={styles.navbarText} href="#">Products</a>
-                            <a className={styles.navbarText} href="#">About</a>
-                            <a className={styles.navbarText} href="#">Client</a>
-                            <a className={styles.navbarText} href="#">Contact</a>
+                            <Link className={styles.navbarText} href="/">Home</Link>
+                            <Link className={styles.navbarText} href="/">Products</Link>
+                            <Link className={styles.navbarText} href="/">About</Link>
+                            <Link className={styles.navbarText} href="/">Client</Link>
+                            <Link className={styles.navbarText} href="/">Contact</Link>
                         </div>
                         <div>
                             <button className={styles.xbutton} onClick={exit}>X</button>
@@ -34,12 +35,12 @@ export default () => {
                 }
                 <div className={styles.navbar}>
                 <span style={{cursor: 'pointer'}}><img onClick={func}  src="toggle-icon.png" alt="logo"/></span>
-                    <a href="index.html"><img src="logo.png"/></a>
+                    <Link href="/"><img src="logo.png"/></Link>
                     <form>
                         <div>
-                            <a className={styles.navbarA} href="#"><img src="user-icon.png"/></a>
-                            <a className={styles.navbarA} href="#"><img src="bag-icon.png"/></a>
-                            <a className={styles.navbarA} href="#"><img src="search-icon.png"/></a>
+                            <Link className={styles.navbarA} href="#"><img src="user-icon.png"/></Link>
+                            <Link className={styles.navbarA} href="#"><img src="bag-icon.png"/></Link>
+                            <Link className={styles.navbarA} href="#"><img src="search-icon.png"/></Link>
                         </div>
                     </form>
                 </div>

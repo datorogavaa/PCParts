@@ -4,6 +4,12 @@
   padding: 12.5px 40px;
   background-color: #fef4ec;
 }
+.great-vibes-regular {
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .navbarA {
   padding-left: 15px;
 }
@@ -22,7 +28,7 @@
   left: 0;
 }
 .navbarTexts {
-  margin-bottom: 600px;
+  margin-bottom: 550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,13 +40,67 @@
   color: #fff;
   font-size: 30px;
   text-decoration: none;
+  font-family: sans-serif;
+  transition: .3s;
+}
+.navbarText:hover {
+  color: #f77f57 ;
 }
 .xbutton {
   color: white;
   background-color: transparent;
   cursor: pointer;
   z-index: 5;
-  margin: 5px 5px;
-  font-size: 30px;
+  margin: 10px 20px;
+  font-size: 25px;
   border: none;
+  transition: .3s;
+}
+.xbutton:hover {
+  color: #f77f57;
+}
+.Carousel {
+  display: flex;
+  justify-content: center;
+  padding-top: 90px;
+  height: 514px;
+  font-family: 'Open Sans',sans-serif;
+  background-image: url(../../public//banner-bg.png);
+
+}
+.CarouselDivFirst {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+.CarouselHeader {
+  font-family: Great Vibes, cursive;
+  font-size: 100px;
+}
+.CarouselImage {
+  width: 540px;
+  height: 514px;
+}
+.CarouselButton {
+  width: 170px;
+  cursor: pointer;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 5px;
+  border: none;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  background-color: #252525;
+  color: #fff;
+  transition: 0.2s;
+}
+.CarouselButton:hover {
+  background-color: #f5ddb6;
+  color: #fff;
+}
+.CarouselText {
+  margin-top: 10px;
+}
+.helperDiv {
+  display: flex;
 }
