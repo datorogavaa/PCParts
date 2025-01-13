@@ -15,7 +15,7 @@ export default () => {
 
     return (    
             <div id="carousel" className={styles.Carousel}>
-                <div className={`${styles.helperDiv}  ${visible ? styles.active : styles.exit}`}>
+                <div className={`${styles.helperDiv}  ${visible ? styles.active : styles.exit}`} >
                     <div className={styles.CarouselDivFirst}>
                         <h3 className={styles.CarouselHeader}>Beauty <br/>Kit</h3>
                         <p className={styles.CarouselText}>Ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br/> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>

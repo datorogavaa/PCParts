@@ -116,6 +116,7 @@ animation: right-to-left 2s ease-in-out forwards;
   display: flex;
   justify-content: center;
   padding-top: 90px;
+  overflow: hidden;
   height: 514px;
   font-family: 'Open Sans',sans-serif;
   background-image: url(../../public//banner-bg.png);
@@ -156,4 +157,22 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 .helperDiv {
   display: flex;
+}
+.Products {
+  padding-top: 90px;
+}
+.ProductsHeader {
+  font-family: 'Open Sans',sans-serif;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 700;
+  color: #232322;
+  text-align: center;
+}
+.ProductsHeader1 {
+  font-family: 'Open Sans',sans-serif;
+  padding-top: 5px;
+  font-size: 16px;
+  color: #232322;
+  text-align: center;
 }
