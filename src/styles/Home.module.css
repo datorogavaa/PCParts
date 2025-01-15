@@ -38,12 +38,11 @@ animation: right-to-left 2s ease-in-out forwards;
 -webkit-animation: right-to-left 2s ease-in-out forwards;
 }
 
-
-
-
 .navbar {
   display: flex;
+  position: fixed;
   justify-content: space-between;
+  width: 100vw;
   padding: 12.5px 40px;
   background-color: #fef4ec;
 }
@@ -59,10 +58,10 @@ animation: right-to-left 2s ease-in-out forwards;
 .navbarSecond {
   display: flex;
   justify-content: space-between;
+  position: fixed;
   left: -100vw;
   width: 100vw;
-  height: 100vh;
-  position: absolute;
+  height: 100%;
   z-index: 5;
   background-color: rgb(0,0,0,.9);
   transition: left 0.9s ease;
@@ -102,18 +101,10 @@ animation: right-to-left 2s ease-in-out forwards;
 .xbutton:hover {
   color: #f77f57;
 }
-.helperDiv {
-  position: relative;
-}
-
-.helperDiv .absoluteChild {
-  position: absolute;
-  left: 0;
-  right: 0; /* Ensure this doesn't extend beyond the container */
-}
 
 .Carousel {
   display: flex;
+  width: 100vw;
   justify-content: center;
   padding-top: 90px;
   overflow: hidden;
@@ -159,6 +150,7 @@ animation: right-to-left 2s ease-in-out forwards;
   display: flex;
 }
 .Products {
+  width: 100vw;
   padding-top: 90px;
 }
 .ProductsHeader {
@@ -169,10 +161,81 @@ animation: right-to-left 2s ease-in-out forwards;
   color: #232322;
   text-align: center;
 }
+.Product {
+  display: flex;
+  margin-right: 20px;
+  margin-top: 20px;
+  flex-direction: column;
+}
 .ProductsHeader1 {
   font-family: 'Open Sans',sans-serif;
   padding-top: 5px;
   font-size: 16px;
   color: #232322;
   text-align: center;
+}
+.ProductFirstDiv {
+  display: flex;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  flex-direction: column;
+  width: 260px;
+}
+.ProductSecondDiv {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  width: 262px;
+  height: 70px;
+}
+.ProductImg {
+  width: 100%;
+  height: 250px;
+}
+.ParentDivofProduct {
+  display: flex;
+  justify-content: center;
+  width: 1400px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.ProductButton {
+  cursor: pointer;
+  background-color: #f5ddb6;
+  color: white;
+  width: 90px;
+  margin-left: 3px;
+  border-radius: 20px;
+  height: 40px;
+}
+.ProductButton1 {
+  cursor: pointer;
+  color: black;
+  width: 90px;
+  margin-left: 3px;
+  border-radius: 20px;
+  height: 40px;
+}
+.ProductButton1:hover {
+  transition: 0.2s;
+  background-color: #f5ddb6;
+  color: white;
+}
+.ProductTitle {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ProductDescription {
+  text-overflow: ellipsis;
+  white-space: nowrap;         
+  overflow: hidden;  
+}
+.ProductText {
+  color: white;
+  font-size: 20px;
+  margin-left: 5px;
+  font-family: sans-serif;
+  
 }

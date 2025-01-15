@@ -33,7 +33,7 @@ export default () => {
                         </div>
                     </div>
                 }
-                <div className={styles.navbar}>
+                <div className={`${styles.navbar}`}>
                 <span style={{cursor: 'pointer'}}><img onClick={func}  src="toggle-icon.png" alt="logo"/></span>
                     <Link href="/"><img src="logo.png"/></Link>
                     <form>
