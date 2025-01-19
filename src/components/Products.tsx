@@ -2,7 +2,6 @@
 import styles from "@/styles/Home.module.css";
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import axios from "axios";
-import { error } from "console";
 import { useEffect,useState } from "react";
 export default () => {
     const [data,setData ] = useState([])
@@ -42,6 +41,7 @@ export default () => {
             }))
             }
             </div>
+            <div style={{ justifyContent: "center", display: 'flex'}}> <button className={styles.seemoreButton}>See More</button> </div>
         </div>
     )
 }
