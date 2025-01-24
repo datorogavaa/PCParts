@@ -12,7 +12,7 @@ export default () => {
                 <img className={styles.restImg} src="about-img.png"/>
             </div>
             <div className={styles.div1}>
-                <h1 style={{fontSize: '40px'}} >WHAT SAYS CUSTOMERS</h1>
+                <h1 style={{fontSize: '40px'}} >WHAT DO CUSTOMERS SAY</h1>
                 <div className={styles.restDiv}>
                         <div style={{display: "flex"}}>
                             <img src="client-img.png" className="d-block w-100" alt="..."/>

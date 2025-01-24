@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Carousel from "@/components/Carousel";
+import Footer from "@/components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function Home() {
             <Carousel/>
             <Products/>
             <Rest/>
+            <Footer/>
           </div>
       </div>
     </>

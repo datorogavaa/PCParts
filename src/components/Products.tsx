@@ -6,9 +6,10 @@ import { useEffect,useState } from "react";
 export default () => {
     const [data,setData ] = useState([])
     const result = () => {
-        axios.get("https://dummyjson.com/products").then(res => {
-            const newData = res.data.products.filter((item: any) => item.category == "beauty" || item.category == "fragrances")
+        axios.get("https://makeup-api.herokuapp.com/api/v1/products.json").then(res => {
+            const newData = res.data
             setData(newData)
+            console.log(data)
         }).catch(error => { return console.log(error)})
     }
     useEffect(() => {
@@ -23,13 +24,13 @@ export default () => {
             <h5 className={styles.ProductsHeader1}>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</h5>
             <div className={styles.ParentDivofProduct}>
             {
-            data.map(((item: any,key) => {
+            data.filter((item: any) => item.id > 1000 && item.price > 0).map(((item: any,key) => {
                 return (
                 <div className={styles.Product} key={key}>
                     <div className={styles.ProductFirstDiv}>
-                        <h3 className={styles.ProductTitle}>{item.title}</h3>
+                        <h3 className={styles.ProductTitle}>{item.name}</h3>
                         <h5 className={styles.ProductDescription}>{item.description}</h5>
-                        <img className={styles.ProductImg} src={item.images[0]}/>
+                        <img className={styles.ProductImg} src={item.api_featured_image }/>
                     </div>
                     <div className={styles.ProductSecondDiv}>
                         <button className={styles.ProductButton}>BUY NOW</button>

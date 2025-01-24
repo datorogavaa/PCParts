@@ -287,6 +287,7 @@ animation: right-to-left 2s ease-in-out forwards;
 .restmainDiv {
   background-color:whitesmoke;
   margin-top: 80px;
+  padding-bottom: 50px;
 }
 .restButton {
   width: 200px;
@@ -331,4 +332,16 @@ animation: right-to-left 2s ease-in-out forwards;
   width: 800px;
   background-color: white;
   margin-top: 50px;
+}
+.footerDiv {
+
+  font-size: 24px;
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  padding-Top: 100px;
+  font-family: sans-serif;
+  width: 100vw;
+  height: 500px;
+  background-color: #252525;
 }
