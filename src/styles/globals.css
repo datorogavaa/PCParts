@@ -6,4 +6,8 @@
 html, body {
     overflow-x: hidden;
   }
-  
+
+  main {
+    padding-top: 80px; 
+    min-height: 100vh; 
+  }

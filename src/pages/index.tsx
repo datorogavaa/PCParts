@@ -30,12 +30,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Header/>
           <div>
             <Carousel/>
             <Products/>
             <Rest/>
-            <Footer/>
           </div>
       </div>
     </>

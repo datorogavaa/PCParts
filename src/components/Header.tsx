@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useEffect,useState } from "react"
+import { useRouter } from "next/router";
 import styles from "@/styles/Home.module.css"
 import Link from "next/link"
 export default () => {
 
-    // show/hide useState
     const [ show, setShow ] = useState(false)
-    // show/hide functions
+    const router = useRouter();
     const func = () => {
         setShow(true)
 
@@ -13,6 +13,18 @@ export default () => {
     const exit = () => {
         setShow(false)
     }
+    useEffect(() => {
+        const handleRouteChange = () => {
+          setShow(false);
+        };
+    
+        router.events.on("routeChangeStart", handleRouteChange);
+    
+        return () => {
+          router.events.off("routeChangeStart", handleRouteChange);
+        };
+      }, [router.events]);
+
 
     return (
             <div>
@@ -22,8 +34,8 @@ export default () => {
                     <div id="navbar" className={`${styles.navbarSecond} ${ show ? styles.active: ''}`}>
                         <br></br>
                         <div className={styles.navbarTexts}>
-                            <Link className={styles.navbarText} href="/">Home</Link>
-                            <Link className={styles.navbarText} href="/">Products</Link>
+                            <Link className={styles.navbarText} href='/'>Home</Link>
+                            <Link className={styles.navbarText} href="Products" >Products</Link>
                             <Link className={styles.navbarText} href="/">About</Link>
                             <Link className={styles.navbarText} href="/">Client</Link>
                             <Link className={styles.navbarText} href="/">Contact</Link>
