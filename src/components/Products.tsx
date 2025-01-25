@@ -1,10 +1,17 @@
 'use client'
+import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import axios from "axios";
 import { useEffect,useState } from "react";
+
+export let Data = [];
 export default () => {
     const [data,setData ] = useState([])
+
+    useEffect( () => {
+       Data = data
+    },[data])
     const result = () => {
         axios.get("https://makeup-api.herokuapp.com/api/v1/products.json").then(res => {
             const newData = res.data
@@ -42,7 +49,7 @@ export default () => {
             }))
             }
             </div>
-            <div style={{ justifyContent: "center", display: 'flex'}}> <button className={styles.seemoreButton}>See More</button> </div>
+            <div style={{ justifyContent: "center", display: 'flex'}}><Link href="Products"><button  className={styles.seemoreButton}>All Products</button></Link> </div>
         </div>
     )
 }

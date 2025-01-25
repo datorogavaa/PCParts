@@ -1,4 +1,3 @@
-/* Define the keyframe animations */
 @-webkit-keyframes left-to-right {
   from { left: 0; }
   to { left: 100vw; }
@@ -344,4 +343,13 @@ animation: right-to-left 2s ease-in-out forwards;
   width: 100vw;
   height: 500px;
   background-color: #252525;
+}
+.ParentDivofProducts {
+  display: flex;
+  justify-content: center;
+  width: 1400px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 100px;
+  margin-bottom: 50px;
 }
