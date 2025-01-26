@@ -1,14 +1,18 @@
 import { Data } from "@/components/Products"
 import styles from "@/styles/Home.module.css"
+import { useState } from "react"
 export default () => {
-    
+    const [ amount, setAmount ] = useState(1000)
+    const More = () => {
+        setAmount(amount - 12)
+    }
     return (
         <div>
            
             <div className={styles.ParentDivofProducts}>
             <h2 className={styles.ProductsHeader}>OUR PRODUCTS</h2>
             {
-            Data.filter((item: any) => item.id > 1000 && item.price > 0).map(((item: any,key) => {
+            Data.filter((item: any) => item.id > amount && item.price > 0).map(((item: any,key) => {
                 return (
                 <div className={styles.Product} key={key}>
                     <div className={styles.ProductFirstDiv}>
@@ -26,7 +30,9 @@ export default () => {
             }))
             }
             </div>
-            <div style={{ justifyContent: "center", display: 'flex', marginBottom: '40px'}}> <button className={styles.seemoreButton}>See More</button> </div>
+            <div style={{ justifyContent: "center", display: 'flex', marginBottom: '40px'}}> 
+                { amount >= 900 &&  <button onClick={More} className={`${styles.seemoreButton}` }>See More</button> }
+            </div>
         </div>
     )
 }
