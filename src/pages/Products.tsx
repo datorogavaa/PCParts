@@ -8,7 +8,6 @@ export default () => {
     }
     return (
         <div>
-           
             <div className={styles.ParentDivofProducts}>
             <h2 className={styles.ProductsHeader}>OUR PRODUCTS</h2>
             {

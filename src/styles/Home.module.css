@@ -234,6 +234,7 @@ animation: right-to-left 2s ease-in-out forwards;
 .ProductDescription {
   font-family: sans-serif;
   text-overflow: ellipsis;
+  height: 15px;
   white-space: nowrap;         
   overflow: hidden;  
 }
