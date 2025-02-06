@@ -1,4 +1,3 @@
-// /pages/posts/index.tsx
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

@@ -7,5 +7,6 @@ export default async function Product(req: NextApiRequest, res: NextApiResponse)
         res.status(200).json(products)
     } catch (error) {
         console.log("error is: ", error)
+        res.status(500).json({ message: "Internal Server Error, rame errori" });
     }
 }
