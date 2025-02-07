@@ -49,7 +49,9 @@ export default () => {
             }))
             }
             </div>
-            <div style={{ justifyContent: "center", display: 'flex'}}><Link href="Products"><button  className={styles.seemoreButton}>All Products</button></Link> </div>
+            <div style={{ justifyContent: "center", display: 'flex'}}><Link href="mainProducts"><button  className={styles.seemoreButton}>All Products</button></Link> 
+            <Link href="addProduct"><button className={styles.addProductsButton}>Add Product</button></Link></div>
+        
         </div>
     )
 }
