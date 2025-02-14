@@ -1,26 +1,31 @@
-import { useEffect, useState } from "react"
-import Link from "next/link"
-export default function ProductsPage()  {
-    const [products, setProducts ] = useState<any[]>([])
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
+export default function ProductDetailPage() {
+    const [product, setProduct] = useState<any | null>(null);
+    const router = useRouter();
+    const { id } = router.query; 
+
     useEffect(() => {
+        if (!id) return; 
         async function getData() {
-            const response = await fetch('/api/products')
+            const response = await fetch(`/api/products/${id}`); 
             const modResponse = await response.json();
-            setProducts(modResponse)
+            setProduct(modResponse);
         }
-        getData()
-    }, [])
+        getData();
+    }, []); 
 
     return (
         <main>
-            {
-                products.map(item => (
-                    <div key={item.id}>   
-                        <h1> <Link href={`/products/${item.id}`}>{item.Name}</Link></h1>
-                    </div>
-                ))
-            }
+            {product ? (
+                <div>
+                    <h1>{product.Name}</h1>
+                    <p>{product.Description}</p>
+                </div>
+            ) : (
+                <p>Loading...</p>
+            )}
         </main>
-    )
-
+    );
 }
