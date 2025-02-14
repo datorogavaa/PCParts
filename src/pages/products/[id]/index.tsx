@@ -14,7 +14,7 @@ export default function ProductDetailPage() {
             setProduct(modResponse);
         }
         getData();
-    }, [id]); 
+    }, []); 
 
     return (
         <main>
