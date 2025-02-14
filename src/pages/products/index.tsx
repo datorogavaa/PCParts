@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import styles from '@/styles/Home.module.css'
 export default function ProductsPage()  {
     const [products, setProducts ] = useState<any[]>([])
     useEffect(() => {
@@ -15,8 +16,8 @@ export default function ProductsPage()  {
         <main>
             {
                 products.map(item => (
-                    <div key={item.id}>   
-                        <h1> <Link href={`/products/${item.id}`}>{item.Name}</Link></h1>
+                    <div key={item.id}>
+                        <Link href={`/products/${item.id}`}><h1 className={styles.editProductsButton}>{item.Name}</h1></Link>
                     </div>
                 ))
             }

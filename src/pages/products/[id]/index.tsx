@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import styles from '@/styles/Home.module.css'
 
 export default function ProductDetailPage() {
     const [product, setProduct] = useState<any | null>(null);
@@ -14,7 +16,7 @@ export default function ProductDetailPage() {
             setProduct(modResponse);
         }
         getData();
-    }, []); 
+    }, [id]); 
 
     return (
         <main>
@@ -22,10 +24,12 @@ export default function ProductDetailPage() {
                 <div>
                     <h1>{product.Name}</h1>
                     <p>{product.Description}</p>
+                    <p>{product.Price}</p>
                 </div>
             ) : (
                 <p>Loading...</p>
             )}
+            <Link href={`/editProduct/${id}`}><button className={styles.editProductsButton}>Update Product</button></Link>
         </main>
     );
 }

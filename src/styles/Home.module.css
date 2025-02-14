@@ -276,6 +276,26 @@ animation: right-to-left 2s ease-in-out forwards;
   transition: .2s;
   background-color: #f5ddb6;
 }
+.editProductsButton {
+  font-weight: 700;
+  text-align: center;
+  align-content: center;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  background-color: black;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: 10px;
+  width: 200px;
+  height: 50px;
+}
+.editProductsButton:hover {
+  transition: .2s;
+  background-color: #f5ddb6;
+}
 .seemoreButton:hover {
   transition: .2s;
   background-color: #f5ddb6;
