@@ -14,12 +14,12 @@ export default async function editProduct(req: NextApiRequest, res: NextApiRespo
           Price: Number(price), 
         },
       });
-
-      return res.status(200).json({ message: "Product updated successfully" });
+      return res.redirect('/')
+      
     } catch (error) {
       console.error(error);
       console.log(req.body)
-      return res.status(500).json({ message: req.body });
+      return res.status(500).json({ message: "Internal server error" });
     }
   } else {
     return res.status(405).json({ message: "Method Not Allowed" }); 

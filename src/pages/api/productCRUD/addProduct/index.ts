@@ -16,7 +16,7 @@ export default async function createProduct(req: any, res: any) {
                 Description: description,
             },
         });
-        return res.status(201).json({ message: "Product created successfully" });
+        return res.redirect('/')
     }
     return res.status(405).json({ message: "Method Not Allowed" });
 

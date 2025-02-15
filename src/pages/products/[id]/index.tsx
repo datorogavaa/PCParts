@@ -30,6 +30,9 @@ export default function ProductDetailPage() {
                 <p>Loading...</p>
             )}
             <Link href={`/editProduct/${id}`}><button className={styles.editProductsButton}>Update Product</button></Link>
+            <form method="POST" action={`/api/productCRUD/deleteProduct/${id}`} >
+                <button type="submit" className={styles.deleteProductsButton}>Delete Product</button>
+            </form>
         </main>
     );
 }
