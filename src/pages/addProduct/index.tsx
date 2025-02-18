@@ -15,6 +15,10 @@ export default () => {
                 <label>Price:</label>
                 <br></br>
                 <input name="price" style={{width: '300px', fontSize: '18px',height: '30px',borderWidth: '2px', borderColor: '#f5ddb6', backgroundColor: '#f5ddb6'}} type="number"/>
+                <br></br>
+                <label>Image Url:</label>
+                <br></br>
+                <input name="image" style={{width: '300px', fontSize: '18px',height: '30px',borderWidth: '2px', borderColor: '#f5ddb6', backgroundColor: '#f5ddb6'}} />
                 </div>
                 <button style={{width: '300px', fontWeight: 'bold',marginLeft: '20px', fontSize: '20px', height: '30px',borderWidth: '2px', borderColor: '#f5ddb6', backgroundColor: '#f5ddb6'}}  type="submit">
                     Create Product</button>

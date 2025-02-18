@@ -22,9 +22,18 @@ export default function ProductDetailPage() {
         <main>
             {product ? (
                 <div>
-                    <h1>{product.Name}</h1>
-                    <p>{product.Description}</p>
-                    <p>{product.Price}</p>
+                        <div className={styles.Product}>
+                            <div className={styles.ProductFirstDiv}>
+                                <h3 className={styles.ProductTitle}>{product.Name}</h3>
+                                <h5 className={styles.ProductDescription}>{product.Description}</h5>
+                                <img className={styles.ProductImg} src={product.Image}/>
+                            </div>
+                            <div className={styles.ProductSecondDiv}>
+                                <button className={styles.ProductButton}>BUY NOW</button>
+                                <button  className={styles.ProductButton1}>ADD TO CART</button>
+                                <p className={styles.ProductText}>Price <br/> {product.Price}$</p>
+                            </div>
+                        </div>
                 </div>
             ) : (
                 <p>Loading...</p>

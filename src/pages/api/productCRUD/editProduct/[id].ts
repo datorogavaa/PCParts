@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function editProduct(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST' || req.method === 'PUT') {
     const { id } = req.query
-    const { name, description, price } = req.body;
+    const { name, description, price, image } = req.body;
     try {
       await prisma.product.update({
         where: { id },
@@ -12,6 +12,7 @@ export default async function editProduct(req: NextApiRequest, res: NextApiRespo
           Name: name,
           Description: description, 
           Price: Number(price), 
+          Image: image
         },
       });
       return res.redirect('/')

@@ -1,27 +1,40 @@
+import styles from "@/styles/Home.module.css"
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import styles from '@/styles/Home.module.css'
-export default function ProductsPage()  {
+export default () => {
     const [products, setProducts ] = useState<any[]>([])
     useEffect(() => {
-        async function getData() {
-            const response = await fetch('/api/products')
-            const modResponse = await response.json();
-            setProducts(modResponse)
+    async function getData() {
+        const response = await fetch('/api/products')
+        const modResponse = await response.json();
+        setProducts(modResponse)
         }
-        getData()
+        getData();
     }, [])
 
     return (
-        <main>
+        <div>
+            <div className={styles.ParentDivofProducts}>
+            <h2 className={styles.ProductsHeader}>OUR PRODUCTS</h2>
             {
-                products.map(item => (
-                    <div key={item.id}>
-                        <Link href={`/products/${item.id}`}><h1 className={styles.editProductsButton}>{item.Name}</h1></Link>
+                products.map((item: any) => (
+                    <div>
+                        <div className={styles.Product}>
+                            <div className={styles.ProductFirstDiv}>
+                            <Link href={`/products/${item.id}`}><h3 className={styles.ProductTitle}>{item.Name}</h3></Link>
+                                <h5 className={styles.ProductDescription}>{item.Description}</h5>
+                                <img className={styles.ProductImg} src={item.Image}/>
+                            </div>
+                            <div className={styles.ProductSecondDiv}>
+                                <button className={styles.ProductButton}>BUY NOW</button>
+                                <button  className={styles.ProductButton1}>ADD TO CART</button>
+                                <p className={styles.ProductText}>Price <br/>{item.Price}$</p>
+                            </div>
+                        </div>
                     </div>
                 ))
             }
-        </main>
+            </div>
+        </div>
     )
-
 }

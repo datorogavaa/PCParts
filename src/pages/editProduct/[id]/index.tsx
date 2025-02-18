@@ -64,6 +64,16 @@ export default function EditProductForm() {
               }}
 
             />
+          <label>Image Url:</label>
+          <br></br>
+          <input name="image" style={{
+            width: '300px',
+            fontSize: '18px',
+            height: '30px',
+            borderWidth: '2px', 
+            borderColor: '#f5ddb6', 
+            backgroundColor: '#f5ddb6'
+            }} />  
           </div>
           <button
             style={{

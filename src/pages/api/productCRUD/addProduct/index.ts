@@ -1,7 +1,7 @@
 import prisma from "@/lib/db";
 export default async function createProduct(req: any, res: any) {
     if (req.method === 'POST') {
-        const { name, description, price } = req.body;
+        const { name, description, price, image } = req.body;
 
         let parsedPrice = 0;
         if (typeof price === 'string' && !isNaN(Number(price))) {
@@ -12,6 +12,7 @@ export default async function createProduct(req: any, res: any) {
             data: {
                 Name: name,
                 Price: parsedPrice,
+                Image: image,
                 slug: name.toLowerCase().replace(/\s+/g, '-'),
                 Description: description,
             },
