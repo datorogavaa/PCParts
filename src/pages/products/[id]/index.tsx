@@ -21,27 +21,36 @@ export default function ProductDetailPage() {
     return (
         <main>
             {product ? (
-                <div>
-                        <div className={styles.Product}>
-                            <div className={styles.ProductFirstDiv}>
-                                <h3 className={styles.ProductTitle}>{product.Name}</h3>
-                                <h5 className={styles.ProductDescription}>{product.Description}</h5>
-                                <img className={styles.ProductImg} src={product.Image}/>
+                <div style={{ margin: '100px'}}>
+                        <div style={{ display: 'flex'}}>
+                            <img style={{ width: '500px', height: '500px'}} src={product.Image}/>
+                            <div>
+                                <h3 style={{ fontSize: '25px'}}>{product.Name}</h3>
+                                <h5 style={{ width: '700px', fontSize: '15px'}}>{product.Description}</h5>
+                                <Link href={`/editProduct/${id}`}><button className={styles.editProductsButton}>Update Product</button></Link>
+                                <form method="POST" action={`/api/productCRUD/deleteProduct/${id}`} >
+                                    <button type="submit" className={styles.deleteProductsButton}>Delete Product</button>
+                                </form>
                             </div>
-                            <div className={styles.ProductSecondDiv}>
-                                <button className={styles.ProductButton}>BUY NOW</button>
-                                <button  className={styles.ProductButton1}>ADD TO CART</button>
-                                <p className={styles.ProductText}>Price <br/> {product.Price}$</p>
+                            <div style={{ backgroundColor: "white", borderRadius: '10px',borderStyle: "solid",alignItems: "center",borderWidth: '1px', borderColor: 'grey', width: '400px', display: "flex", flexDirection: 'column',justifyContent: "space-around"}}>
+                                    <h1 style={{color: "black", float: 'left',fontSize: '40px', fontWeight: '700'}} className={styles.ProductText}> <br/> {product.Price}$</h1>
+                                    <label style={{backgroundColor: '#F7F7F7', fontSize: '12px', fontWeight: '700',width: '350px', textAlign: "center", height: '120px', alignContent: "center"}}>Newegg Store Credit Card
+                                        $43/mo suggested payments with 12- <br></br>month special financing. <Link href='#' style={{color: '#c63527'}}>Learn how</Link><br></br>
+                                        As low as $47/month or 15% APR with Affirm. <br></br>Prequalify Now. <br></br>
+                                        4 payments
+                                        of
+                                        $129.00
+                                        with
+                                        ⓘ</label>
+                                <button style={{display: 'block', width: '250px' }} className={styles.ProductButton1}>CHOOSE COUNT</button>
+                                <button style={{display: 'block', width: '250px' }} className={styles.ProductButton1}>BUY NOW</button>
+                                <button style={{display: 'block', width: '250px' }} className={styles.ProductButton1}>ADD TO CART</button>
                             </div>
                         </div>
                 </div>
             ) : (
                 <p>Loading...</p>
             )}
-            <Link href={`/editProduct/${id}`}><button className={styles.editProductsButton}>Update Product</button></Link>
-            <form method="POST" action={`/api/productCRUD/deleteProduct/${id}`} >
-                <button type="submit" className={styles.deleteProductsButton}>Delete Product</button>
-            </form>
         </main>
     );
 }
