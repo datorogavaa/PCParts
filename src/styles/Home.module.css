@@ -28,6 +28,7 @@ transition: none;
 }
 .siteName {
     color:#232322;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .helperDiv.active {
 animation: left-to-right 2s ease-in-out forwards;
@@ -46,7 +47,8 @@ animation: right-to-left 2s ease-in-out forwards;
   justify-content: space-between;
   width: 100vw;
   padding: 12.5px 40px;
-  background-color: #fef4ec;
+  background-color: #6CB4EE;
+  color: white;
 }
 .great-vibes-regular {
   font-family: "Great Vibes", serif;
@@ -112,7 +114,7 @@ animation: right-to-left 2s ease-in-out forwards;
   overflow: hidden;
   height: 514px;
   font-family: 'Open Sans',sans-serif;
-  background-image: url(../../public//banner-bg.png);
+  background-color: #F0F8FF;
 
 }
 .CarouselDivFirst {
@@ -122,7 +124,7 @@ animation: right-to-left 2s ease-in-out forwards;
   margin-right: 40px;
 }
 .CarouselHeader {
-  font-family: Great Vibes, cursive;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 100px;
 }
 .CarouselImage {
@@ -143,7 +145,7 @@ animation: right-to-left 2s ease-in-out forwards;
   transition: 0.2s;
 }
 .CarouselButton:hover {
-  background-color: #f5ddb6;
+  background-color: #0CAFFF;
   color: #fff;
 }
 .CarouselText {
@@ -207,7 +209,7 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 .ProductButton {
   cursor: pointer;
-  background-color: #f5ddb6;
+  background-color: #6CB4EE;
   color: white;
   width: 90px;
   margin-left: 3px;
@@ -224,7 +226,7 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 .ProductButton1:hover {
   transition: 0.2s;
-  background-color: #f5ddb6;
+  background-color: #6CB4EE;
   color: white;
 }
 .ProductTitle {
@@ -258,7 +260,7 @@ animation: right-to-left 2s ease-in-out forwards;
   width: 200px;
   height: 50px;
 }
-.addProductsButton, .editProductsButton, .deleteProductsButton{
+.addProductsButton, .editProductsButton, .updateProductsButton,.deleteProductsButton{
   font-weight: 700;
   color: white;
   text-align: center;
@@ -274,19 +276,15 @@ animation: right-to-left 2s ease-in-out forwards;
   width: 200px;
   height: 50px;
 }
-.editProductsButton:hover, .addProductsButton:hover, .deleteProductsButton:hover {
+.editProductsButton:hover,.updateProductsButton:hover, .seemoreButton:hover ,.addProductsButton:hover, .deleteProductsButton:hover {
   transition: .2s;
-  background-color: #f5ddb6;
-}
-.seemoreButton:hover {
-  transition: .2s;
-  background-color: #f5ddb6;
+  background-color: #6CB4EE;
 }
 
 .div {
   height: 500px;
   align-items: center;
-  background-color: #fef4ec;
+  background-color: #F0F8FF;
   justify-content: center;
   display: flex;
 }
@@ -346,11 +344,11 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 .restButton1:hover {
   transition: .3s;
-  background-color: #f5ddb6;
+  background-color: #F0F8FF;
 }
 .restDiv {
   width: 800px;
-  background-color: white;
+  background-color: #F0F8FF;
   margin-top: 50px;
 }
 .footerDiv {

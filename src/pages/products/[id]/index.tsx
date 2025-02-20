@@ -24,13 +24,15 @@ export default function ProductDetailPage() {
                 <div style={{ margin: '100px'}}>
                         <div style={{ display: 'flex'}}>
                             <img style={{ width: '500px', height: '500px'}} src={product.Image}/>
-                            <div>
+                            <div style={{ marginLeft: '40px', display: 'flex', flexDirection: "column"}}>
                                 <h3 style={{ fontSize: '25px'}}>{product.Name}</h3>
-                                <h5 style={{ width: '700px', fontSize: '15px'}}>{product.Description}</h5>
-                                <Link href={`/editProduct/${id}`}><button className={styles.editProductsButton}>Update Product</button></Link>
+                                <h5 style={{ backgroundColor: '#F7F7F7',fontSize: '20px',width: '700px', marginTop: '60px', padding: '20px'}}>{product.Description}</h5>
+                                <div style={{display: 'flex'}}>
+                                <Link href={`/editProduct/${id}`}><button className={styles.updateProductsButton}>Update Product</button></Link>
                                 <form method="POST" action={`/api/productCRUD/deleteProduct/${id}`} >
                                     <button type="submit" className={styles.deleteProductsButton}>Delete Product</button>
                                 </form>
+                                </div>
                             </div>
                             <div style={{ backgroundColor: "white", borderRadius: '10px',borderStyle: "solid",alignItems: "center",borderWidth: '1px', borderColor: 'grey', width: '400px', display: "flex", flexDirection: 'column',justifyContent: "space-around"}}>
                                     <h1 style={{color: "black", float: 'left',fontSize: '40px', fontWeight: '700'}} className={styles.ProductText}> <br/> {product.Price}$</h1>

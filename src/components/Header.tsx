@@ -47,7 +47,7 @@ export default () => {
                 }
                 <div className={`${styles.navbar}`}>
                 <span style={{cursor: 'pointer'}}><img onClick={func}  src="toggle-icon.png" alt="logo"/></span>
-                    <Link style={{textDecoration: 'none'}} href="/"><h2 className={styles.siteName}>BEAUTY STORE</h2></Link>
+                    <Link style={{textDecoration: 'none'}} href="/"><h2 className={styles.siteName}>PC Parts</h2></Link>
                     <form>
                         <div>
                             <Link className={styles.navbarA} href="#"><img src="user-icon.png"/></Link>

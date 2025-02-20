@@ -15,7 +15,7 @@ export default () => {
     return (
         <div>
             <div className={styles.ParentDivofProducts}>
-            <h2 className={styles.ProductsHeader}>OUR PRODUCTS</h2>
+            <h2 className={styles.ProductsHeader}>ALL PRODUCTS</h2>
             {
                 products.map((item: any) => (
                     <div>

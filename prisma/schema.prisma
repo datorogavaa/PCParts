@@ -18,8 +18,8 @@ model Product {
   id String @id @default(cuid())
   Name String @unique
   slug String @unique
-  Description  String?
-  Price Int 
+  Description  String
+  Price Float
   Image String @unique
   updatedAt DateTime @updatedAt
   createdAt DateTime @default(now())
