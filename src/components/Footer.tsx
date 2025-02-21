@@ -8,9 +8,9 @@ export default () => {
                 <div style={{display: 'flex',  width: '100vw',justifyContent: 'space-around'}}>
                     <div style={{display: 'flex',flexDirection: "column"}}>
                         <h4>CONTACT US</h4>
-                        <p style={{display: 'flex',marginTop: '20px', fontSize: '17px', listStyle: 'none',alignItems: 'center'}}><span><img style={{ marginRight:'8px'}} src="map-icon.png" alt="icon1" /></span>Address : Tbilisi</p>
-                        <p style={{ display: 'flex',marginTop: '20px', fontSize: '17px', listStyle: 'none', alignItems: 'center'}}><span><img  style={{ marginRight:'8px'}} src="call-icon.png" alt="icon2" /></span>Call : +995 591721515</p>
-                        <p style={{display: 'flex',marginTop: '20px', fontSize: '17px',  listStyle: 'none',alignItems: 'center'}}><span><img  style={{ marginRight:'8px'}} src="mail-icon.png" alt="icon3" /></span>Email : datorogavaa@gmail.com</p>
+                        <p className={styles.footerP}><span><img style={{ marginRight:'8px'}} src="map-icon.png" alt="icon1" /></span>Address : Tbilisi</p>
+                        <p className={styles.footerP} ><span><img  style={{ marginRight:'8px'}} src="call-icon.png" alt="icon2" /></span>Call : +995 591721515</p>
+                        <p className={styles.footerP}><span><img  style={{ marginRight:'8px'}} src="mail-icon.png" alt="icon3" /></span>Email : datorogavaa@gmail.com</p>
                     </div>
                     <div style={{textAlign: 'center'}}>
                         <h4>PC Parts</h4>

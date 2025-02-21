@@ -31,7 +31,7 @@ export default () => {
             <div>
                 <nav>
                 {
-                    <div id="navbar" className={`${styles.navbarSecond} ${ show ? styles.active: ''}`}>
+                    <div  className={`${styles.navbarSecond} ${ show ? styles.active: ''}`}>
                         <br></br>
                         <div className={styles.navbarTexts}>
                             <Link className={styles.navbarText} href='/'>Home</Link>
@@ -50,9 +50,9 @@ export default () => {
                     <Link style={{textDecoration: 'none'}} href="/"><h2 className={styles.siteName}>PC Parts</h2></Link>
                     <form>
                         <div>
-                            <Link className={styles.navbarA} href="#"><img src="user-icon.png"/></Link>
-                            <Link className={styles.navbarA} href="#"><img src="bag-icon.png"/></Link>
-                            <Link className={styles.navbarA} href="#"><img src="search-icon.png"/></Link>
+                            <Link className={styles.navbarA} href="/login"><img src="user-icon.png"/></Link>
+                            <Link className={styles.navbarA} href="/"><img src="bag-icon.png"/></Link>
+                            <Link className={styles.navbarA} href="/"><img src="search-icon.png"/></Link>
                         </div>
                     </form>
                 </div>

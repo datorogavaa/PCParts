@@ -50,6 +50,7 @@ animation: right-to-left 2s ease-in-out forwards;
   background-color: #6CB4EE;
   color: white;
 }
+
 .great-vibes-regular {
   font-family: "Great Vibes", serif;
   font-weight: 400;
@@ -90,7 +91,7 @@ animation: right-to-left 2s ease-in-out forwards;
   transition: .3s;
 }
 .navbarText:hover {
-  color: #f77f57 ;
+  color: #6CB4EE;
 }
 .xbutton {
   color: white;
@@ -103,7 +104,7 @@ animation: right-to-left 2s ease-in-out forwards;
   transition: .3s;
 }
 .xbutton:hover {
-  color: #f77f57;
+  color: #6CB4EE;
 }
 
 .Carousel {
@@ -231,6 +232,7 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 .ProductTitle {
   white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
 .ProductDescription {
@@ -362,6 +364,14 @@ animation: right-to-left 2s ease-in-out forwards;
   height: 500px;
   background-color: #252525;
 }
+.footerP {
+  display: flex;
+  margin-Top: 20px;
+  font-size: 17px;
+  list-style: none;
+  align-Items: center
+
+}
 .ParentDivofProducts {
   display: flex;
   justify-content: center;
@@ -370,4 +380,36 @@ animation: right-to-left 2s ease-in-out forwards;
   margin: 0 auto;
   padding-top: 100px;
   margin-bottom: 50px;
+}
+.LoginDiv {
+  width: 500px;
+  height: 700px;
+  margin: auto;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 25px;
+  align-content: center;
+  padding-left: 60px;
+  border-color: #6CB4EE;
+  color: #232322;
+  border-radius: 10px;
+}
+.loginInput {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 300px;
+  height: 40px;
+  border-radius: 7px;
+  margin: 10px 0px;
+}
+.loginButton {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #0CAFFF;
+  margin-top: 20px;
+  width: 300px;
+  height: 50px;
 }
