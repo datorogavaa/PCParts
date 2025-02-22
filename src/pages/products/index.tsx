@@ -1,6 +1,7 @@
 import styles from "@/styles/Home.module.css"
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 export default () => {
     const [products, setProducts ] = useState<any[]>([])
     useEffect(() => {

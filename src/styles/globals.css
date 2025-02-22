@@ -9,7 +9,7 @@ html, body {
     overflow-x: hidden;
   }
 
-  main {
-    padding-top: 60px; 
-    min-height: 100vh; 
-  }
+main {
+  padding-top: 60px; 
+  min-height: 800px;
+}

@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 
@@ -24,4 +24,12 @@ model Product {
   updatedAt DateTime @updatedAt
   createdAt DateTime @default(now())
   @@index([slug])
+}
+model User {
+  id Int @id @default(autoincrement())
+  Name String 
+  Lastname String
+  Age Int
+  Email String @unique
+  Password  String
 }

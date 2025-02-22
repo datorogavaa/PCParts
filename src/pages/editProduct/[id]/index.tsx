@@ -1,8 +1,18 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function EditProductForm() {
     const router = useRouter()
     const { id } = router.query
+    const [ product, setProduct ] = useState<any | null>(null) 
+    useEffect(() => {
+      async function getData() {
+        const data = await fetch(`/api/products/${id}`)
+        const response = await data.json()
+        setProduct(response)
+      }
+      getData()
+    },[id])
     return (
       <div
         style={{
@@ -33,6 +43,7 @@ export default function EditProductForm() {
                 borderColor: "#f5ddb6",
                 backgroundColor: "#f5ddb6",
               }}
+              value={product ? product.Name: ''}
             />
             <br />
             <label>Description:</label>
@@ -47,6 +58,7 @@ export default function EditProductForm() {
                 borderColor: "#f5ddb6",
                 backgroundColor: "#f5ddb6",
               }}
+              value={product ? product.Description: ''}
             />
             <br />
             <label>Price:</label>
@@ -62,11 +74,12 @@ export default function EditProductForm() {
                 borderColor: "#f5ddb6",
                 backgroundColor: "#f5ddb6",
               }}
-
+              value={product ? product.Price: ''}
             />
+          <br></br>
           <label>Image Url:</label>
           <br></br>
-          <input name="image" style={{
+          <input value={product ? product.Image: ''} name="image" style={{
             width: '300px',
             fontSize: '18px',
             height: '30px',
