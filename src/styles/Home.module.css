@@ -340,6 +340,7 @@ animation: right-to-left 2s ease-in-out forwards;
   cursor: pointer;
   background-color: white;
   border: none;
+  font-size: 35px;
   width: 70px;
   height: 70px;
   border-Radius: 40px

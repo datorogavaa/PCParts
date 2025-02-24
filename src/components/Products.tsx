@@ -3,29 +3,13 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import { useEffect,useState } from "react";
-import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+
 
 export let Data = [];
 export default () => {
-    // const [data,setData ] = useState([])
-    // useEffect( () => {
-    //    Data = data
-    // },[data])
-    // const result = () => {
-    //     axios.get("https://makeup-api.herokuapp.com/api/v1/products.json").then(res => {
-    //         const newData = res.data
-    //         setData(newData)
-    //         console.log(data)
-    //     }).catch(error => { return console.log(error)})
-    // }
-    // useEffect(() => {
-    //     result()
-    // },[])
-    // useEffect(() => {
-    //     console.log(data)
-    // },[data])
-
     const [products, setProducts ] = useState<any[]>([])
+    const { data: session, status } = useSession();
     useEffect(() => {
     async function getData() {
         const response = await fetch('/api/products')
@@ -62,8 +46,10 @@ export default () => {
 
             </div>
             <div style={{ justifyContent: "center", display: 'flex'}}><Link href="/products"><button  className={styles.seemoreButton}>All Products</button></Link> 
-            <Link href="addProduct"><button className={styles.addProductsButton}>Add Product</button></Link></div>
-        
+            {
+                status === 'authenticated' ? <Link href="addProduct"><button className={styles.addProductsButton}>Add Product</button></Link> : ''
+            }
+            </div>
         </div>
     )
 }

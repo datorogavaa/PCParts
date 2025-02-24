@@ -32,4 +32,28 @@ model User {
   Age Int
   Email String @unique
   Password  String
+
+
+  Account Account[]
+
+  Session Session[]
+}
+
+model Account {
+  id                 Int      @id @default(autoincrement())
+  userId             Int
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  access_token_expires DateTime?
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  sessionToken String   @unique
+  userId       Int
+  expires      DateTime
+  user User @relation(fields: [userId], references: [id])
 }

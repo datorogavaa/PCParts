@@ -24,12 +24,10 @@ export default () => {
                 </div>
                 <div style={{display: 'flex', justifyContent: 'center',marginTop: '40px'}}>
                     <button className={`carousel-control-prev ${styles.restButton1}`} type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">  <i style={{fontSize: '30px'}} className="bi bi-arrow-left"></i></span>
+                    ←
                     </button>
                     <button className={`carousel-control-next ${styles.restButton1}`} type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"> <i style={{fontSize: '30px'}} className="bi bi-arrow-right"></i></span>
-                        <span className="visually-hidden"></span>
+                    →
                     </button>
                 </div>
             </div>
