@@ -16,7 +16,7 @@ export default () => {
     return (
         <div>
             <div className={styles.ParentDivofProducts}>
-            <h2 className={styles.ProductsHeader}>ALL PRODUCTS</h2>
+            <h2 className={styles.ProductsHeader}>ყველა პროდუქტი</h2>
             {
                 products.map((item: any) => (
                     <div>
@@ -27,9 +27,9 @@ export default () => {
                                 <img className={styles.ProductImg} src={item.Image}/>
                             </div>
                             <div className={styles.ProductSecondDiv}>
-                                <button className={styles.ProductButton}>BUY NOW</button>
-                                <button  className={styles.ProductButton1}>ADD TO CART</button>
-                                <p className={styles.ProductText}>Price <br/>{item.Price}$</p>
+                                <button className={styles.ProductButton}>ყიდვა</button>
+                                <button  className={styles.ProductButton1}>კალათაში დამატება</button>
+                                <p className={styles.ProductText}>ფასი: <br/>{item.Price}$</p>
                             </div>
                         </div>
                     </div>

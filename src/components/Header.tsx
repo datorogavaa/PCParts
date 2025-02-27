@@ -34,11 +34,11 @@ export default () => {
                     <div  className={`${styles.navbarSecond} ${ show ? styles.active: ''}`}>
                         <br></br>
                         <div className={styles.navbarTexts}>
-                            <Link className={styles.navbarText} href='/'>Home</Link>
-                            <Link className={styles.navbarText} href="/products" >Products</Link>
-                            <Link className={styles.navbarText} href="/">About</Link>
-                            <Link className={styles.navbarText} href="/">Client</Link>
-                            <Link className={styles.navbarText} href="/">Contact</Link>
+                            <Link className={styles.navbarText} href='/'>მთავარი</Link>
+                            <Link className={styles.navbarText} href="/products" >პროდუქტები</Link>
+                            <Link className={styles.navbarText} href="/">შესახებ</Link>
+                            <Link className={styles.navbarText} href="/">მომხმარებელი</Link>
+                            <Link className={styles.navbarText} href="/">კონტაქტი</Link>
                         </div>
                         <div>
                             <button className={styles.xbutton} onClick={exit}>X</button>

@@ -31,7 +31,7 @@ export default function EditProductForm() {
           </h1>
           <div style={{ margin: "20px" }}>
             <input type="hidden" name="id" />
-            <label>Name:</label>
+            <label>დასახელება: </label>
             <br />
             <input
               name="name"
@@ -46,7 +46,7 @@ export default function EditProductForm() {
               value={product ? product.Name: ''}
             />
             <br />
-            <label>Description:</label>
+            <label>აღწერა:</label>
             <br />
             <textarea
               name="description"
@@ -61,7 +61,7 @@ export default function EditProductForm() {
               value={product ? product.Description: ''}
             />
             <br />
-            <label>Price:</label>
+            <label>ფასი:</label>
             <br />
             <input
               name="price"
@@ -77,7 +77,7 @@ export default function EditProductForm() {
               value={product ? product.Price: ''}
             />
           <br></br>
-          <label>Image Url:</label>
+          <label>სურათის ლინკი:</label>
           <br></br>
           <input value={product ? product.Image: ''} name="image" style={{
             width: '300px',
@@ -101,7 +101,7 @@ export default function EditProductForm() {
             }}
             type="submit"
           >
-            Edit Product
+            პროდუქტის რედაქტირება
           </button>
         </form>
       </div>

@@ -3,13 +3,11 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import { useEffect,useState } from "react";
-import { useSession } from "next-auth/react";
 
 
 export let Data = [];
 export default () => {
     const [products, setProducts ] = useState<any[]>([])
-    const { data: session, status } = useSession();
     useEffect(() => {
     async function getData() {
         const response = await fetch('/api/products')
@@ -21,8 +19,9 @@ export default () => {
 
     return (
         <div className={styles.Products}>
-            <h2 className={styles.ProductsHeader}>OUR PRODUCTS</h2>
-            <h5 className={styles.ProductsHeader1}>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</h5>
+            <h2 className={styles.ProductsHeader}>ჩვენი პროდუქტები</h2>
+            <h5 className={styles.ProductsHeader1}>გაუმჯობესეთ თქვენი კომპიუტერი ხარისხით და სისწრაფით!
+</h5>
             <div className={styles.ParentDivofProduct}>
             
             {
@@ -35,9 +34,9 @@ export default () => {
                                 <img className={styles.ProductImg} src={item.Image}/>
                             </div>
                             <div className={styles.ProductSecondDiv}>
-                                <button className={styles.ProductButton}>BUY NOW</button>
-                                <button  className={styles.ProductButton1}>ADD TO CART</button>
-                                <p className={styles.ProductText}>Price <br/>{item.Price}$</p>
+                                <button className={styles.ProductButton}>ყიდვა</button>
+                                <button  className={styles.ProductButton1}>კალათაში დამატება</button>
+                                <p className={styles.ProductText}>ფასი: <br/>{item.Price}$</p>
                             </div>
                         </div>
                     </div>
@@ -45,10 +44,8 @@ export default () => {
             }
 
             </div>
-            <div style={{ justifyContent: "center", display: 'flex'}}><Link href="/products"><button  className={styles.seemoreButton}>All Products</button></Link> 
-            {
-                status === 'authenticated' ? <Link href="addProduct"><button className={styles.addProductsButton}>Add Product</button></Link> : ''
-            }
+            <div style={{ justifyContent: "center", display: 'flex'}}><Link href="/products"><button  className={styles.seemoreButton}>ყველა პროდუქტი</button></Link> 
+            <Link href="addProduct"><button className={styles.addProductsButton}>პროდუქტის დამატება</button></Link>
             </div>
         </div>
     )

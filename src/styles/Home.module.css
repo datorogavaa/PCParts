@@ -359,15 +359,15 @@ animation: right-to-left 2s ease-in-out forwards;
   display: flex;
   color: white;
   justify-content: space-around;
-  padding-Top: 100px;
+  padding-Top: 10px;
   font-family: sans-serif;
   width: 100vw;
-  height: 500px;
+  height: 250px;
   background-color: #252525;
 }
 .footerP {
   display: flex;
-  margin-Top: 20px;
+  margin-Top: 10px;
   font-size: 17px;
   list-style: none;
   align-Items: center

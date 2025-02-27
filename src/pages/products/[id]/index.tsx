@@ -28,9 +28,9 @@ export default function ProductDetailPage() {
                                 <h3 style={{ fontSize: '25px'}}>{product.Name}</h3>
                                 <h5 style={{ backgroundColor: '#F7F7F7',fontSize: '20px',width: '700px', marginTop: '60px', padding: '20px'}}>{product.Description}</h5>
                                 <div style={{display: 'flex'}}>
-                                <Link href={`/editProduct/${id}`}><button className={styles.updateProductsButton}>Update Product</button></Link>
+                                <Link href={`/editProduct/${id}`}><button className={styles.updateProductsButton}>პროდუქტის რედაქტირება</button></Link>
                                 <form method="POST" action={`/api/productCRUD/deleteProduct/${id}`} >
-                                    <button type="submit" className={styles.deleteProductsButton}>Delete Product</button>
+                                    <button type="submit" className={styles.deleteProductsButton}>პროდუქტის წაშლა</button>
                                 </form>
                                 </div>
                             </div>

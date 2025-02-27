@@ -1,6 +1,5 @@
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
-import { signIn } from "next-auth/react";
 export default () => {
     return (
             <div className={styles.LoginDiv}>
@@ -12,7 +11,6 @@ export default () => {
                     <input name='password' className={styles.loginInput}></input>
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                         <button className={styles.loginButton} type='submit'>Log In</button>
-                        <button onClick={() => signIn("github")}>Login with GitHub</button>
                         <p style={{fontSize: '16px', marginTop: '10px'}}>Don't Have an Account?  Sign Up ↓ </p>
                        <Link href='/register'><button className={styles.loginButton} type='button'>Sign Up</button></Link>
                     </div>
