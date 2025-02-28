@@ -58,7 +58,9 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 
 .navbarA {
-  padding-left: 15px;
+  color: black;
+  background-color: none;
+  margin-left: 15px;
 }
 .navbarSecond {
   display: flex;
@@ -215,6 +217,7 @@ animation: right-to-left 2s ease-in-out forwards;
   width: 90px;
   margin-left: 3px;
   border-radius: 20px;
+  font-size: 20px;
   height: 40px;
 }
 .ProductButton1 {

@@ -3,10 +3,10 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import { useEffect,useState } from "react";
+import { useSession, signIn, signOut} from "next-auth/react";
 
-
-export let Data = [];
 export default () => {
+    const { data: session } = useSession() 
     const [products, setProducts ] = useState<any[]>([])
     useEffect(() => {
     async function getData() {
@@ -16,12 +16,11 @@ export default () => {
         }
         getData();
     }, [])
-
+    console.log(session?.user)
     return (
         <div className={styles.Products}>
             <h2 className={styles.ProductsHeader}>ჩვენი პროდუქტები</h2>
-            <h5 className={styles.ProductsHeader1}>გაუმჯობესეთ თქვენი კომპიუტერი ხარისხით და სისწრაფით!
-</h5>
+            <h5 className={styles.ProductsHeader1}>გააუმჯობესეთ თქვენი კომპიუტერი ხარისხით და სისწრაფით!</h5>
             <div className={styles.ParentDivofProduct}>
             
             {
@@ -45,7 +44,7 @@ export default () => {
 
             </div>
             <div style={{ justifyContent: "center", display: 'flex'}}><Link href="/products"><button  className={styles.seemoreButton}>ყველა პროდუქტი</button></Link> 
-            <Link href="addProduct"><button className={styles.addProductsButton}>პროდუქტის დამატება</button></Link>
+            {session?.user &&  <Link href="addProduct"><button className={styles.addProductsButton}>პროდუქტის დამატება</button></Link>}
             </div>
         </div>
     )
