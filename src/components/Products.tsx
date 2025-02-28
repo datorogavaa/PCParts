@@ -25,7 +25,6 @@ export default () => {
             
             {
                 products.map((item: any) => (
-                    <div>
                         <div className={styles.Product}>
                             <div className={styles.ProductFirstDiv}>
                             <Link href={`/products/${item.id}`}><h3 className={styles.ProductTitle}>{item.Name}</h3></Link>
@@ -38,7 +37,6 @@ export default () => {
                                 <p className={styles.ProductText}>ფასი: <br/>{item.Price}$</p>
                             </div>
                         </div>
-                    </div>
                 ))
             }
 

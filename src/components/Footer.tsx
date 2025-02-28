@@ -16,7 +16,7 @@ export default () => {
                         <h4>PC Parts</h4>
                         <p style={{marginTop: '20px', fontSize: '17px'}}> Dato Rogava © 2025 ყველა უფლება დაცულია </p>
                     </div>
-                    <div style={{textAlign: 'center'}}>
+                    <div style={{textAlign: 'center', marginRight: '15px'}}>
                         <h4>ჩვენს შესახებ</h4>
                         <p style={{marginTop: '20px', fontSize: '17px'}}>უმაღლესი ხარისხის პროდუქცია
                         <br></br>დაბალი ფასები<br></br> სწრაფი მომსახურება</p>

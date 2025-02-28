@@ -158,6 +158,9 @@ animation: right-to-left 2s ease-in-out forwards;
   display: flex;
 }
 .Products {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   width: 100vw;
   padding-top: 90px;
 }
@@ -177,6 +180,7 @@ animation: right-to-left 2s ease-in-out forwards;
 }
 .ProductsHeader1 {
   font-family: 'Open Sans',sans-serif;
+  width: 100%;
   padding-top: 5px;
   font-size: 16px;
   color: #232322;
@@ -206,9 +210,9 @@ animation: right-to-left 2s ease-in-out forwards;
 .ParentDivofProduct {
   display: flex;
   justify-content: center;
-  width: 1400px;
+  width: 100%;
   flex-wrap: wrap;
-  margin: 0 auto;
+  padding: 0 100px;
 }
 .ProductButton {
   cursor: pointer;
@@ -288,6 +292,7 @@ animation: right-to-left 2s ease-in-out forwards;
 
 .div {
   height: 500px;
+  flex-wrap: wrap;
   align-items: center;
   background-color: #F0F8FF;
   justify-content: center;
@@ -353,7 +358,8 @@ animation: right-to-left 2s ease-in-out forwards;
   background-color: #F0F8FF;
 }
 .restDiv {
-  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
   background-color: #F0F8FF;
   margin-top: 50px;
 }
@@ -377,10 +383,8 @@ animation: right-to-left 2s ease-in-out forwards;
 
 }
 .ParentDivofProducts {
-  display: flex;
   justify-content: center;
   width: 1400px;
-  flex-wrap: wrap;
   margin: 0 auto;
   padding-top: 100px;
   margin-bottom: 50px;

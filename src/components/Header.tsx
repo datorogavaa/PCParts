@@ -25,7 +25,9 @@ export default () => {
           router.events.off("routeChangeStart", handleRouteChange);
         };
       }, [router.events]);
-
+    if ( session ) {
+        console.log(session.expires)
+    }
     return (
             <div>
             <div>
