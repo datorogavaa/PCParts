@@ -1,5 +1,5 @@
 import prisma from "@/lib/db"
-import bcrypt from 'bcryptjs';
+import bcrypt, { compare } from 'bcryptjs';
 import { NextApiRequest, NextApiResponse } from "next"
 import { signUpFormSchema, User } from "@/lib/definitions";
 export default async function signUp(req: NextApiRequest, res: NextApiResponse) {
@@ -12,8 +12,8 @@ export default async function signUp(req: NextApiRequest, res: NextApiResponse) 
                     email: email,
                 }
             })
-            if(userInfo) {
-                return res.status(200).json('User Signed in Successfully')
+            if(userInfo &&  await compare(password, userInfo.password))  {
+                return res.status(201).json(userInfo)
             }
         } catch (error) {
             return res.status(500).json(`Internal server error ${error}`)

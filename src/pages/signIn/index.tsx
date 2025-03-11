@@ -2,23 +2,35 @@ import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-
+import { signIn } from 'next-auth/react'
 export default () => {
     const [email , setEmail ] = useState('')
     const [password , setPassword] = useState('')
     const router = useRouter()
     const handleSubmit = async (e: any) => {
         e.preventDefault()
-        const postReq = await fetch('/api/signUp', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email,password})
+        const login = await signIn('credentials', {
+            email: email,
+            password: password,
+            redirect: false
         })
-        if (postReq.ok) {
-            return router.push('/')
+
+        if (login?.ok) {
+            router.push('/')
+        }else {
+            return 'Error'
         }
+        // e.preventDefault()
+        // const postReq = await fetch('/api/signUp', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({email,password})
+        // })
+        // if (postReq.ok) {
+        //     return router.push('/')
+        // }
     }
     return (
         <div className={styles.LoginDiv}>
@@ -43,7 +55,7 @@ export default () => {
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <button className={styles.loginButton} type="submit" >Log In</button>
                     <p style={{ fontSize: '16px', marginTop: '10px' }}>Don't Have an Account? Sign Up ↓ </p>
-                    <Link href="/register">
+                    <Link href="/signUp">
                         <button className={styles.loginButton} type="button">Sign Up</button>
                     </Link>
                 </div>
