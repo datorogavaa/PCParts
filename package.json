@@ -16,6 +16,8 @@
     "@prisma/extension-accelerate": "^1.2.1",
     "@types/next": "^8.0.7",
     "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "next": "^15.1.3",
