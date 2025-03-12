@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
+import { sign } from 'crypto'
 export default () => {
     const [email , setEmail ] = useState('')
     const [password , setPassword] = useState('')
@@ -12,25 +13,14 @@ export default () => {
         const login = await signIn('credentials', {
             email: email,
             password: password,
-            redirect: false
+            redirect: false,
         })
 
-        if (login?.ok) {
+        if (!login?.error) {
             router.push('/')
-        }else {
-            return 'Error'
+        }else{
+            console.log(login.error)
         }
-        // e.preventDefault()
-        // const postReq = await fetch('/api/signUp', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({email,password})
-        // })
-        // if (postReq.ok) {
-        //     return router.push('/')
-        // }
     }
     return (
         <div className={styles.LoginDiv}>
@@ -54,6 +44,9 @@ export default () => {
                 />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <button className={styles.loginButton} type="submit" >Log In</button>
+                    <div>
+                    <button className={styles.loginButton} onClick={signIn} >Log In with Gmail or Github</button>
+                    </div>
                     <p style={{ fontSize: '16px', marginTop: '10px' }}>Don't Have an Account? Sign Up ↓ </p>
                     <Link href="/signUp">
                         <button className={styles.loginButton} type="button">Sign Up</button>

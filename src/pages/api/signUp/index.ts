@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 import { signUpFormSchema, User } from "@/lib/definitions";
 export default async function signUp(req: NextApiRequest, res: NextApiResponse) {
     const { name, email, password }: User = signUpFormSchema.parse(req.body)
-    const hashPassword = bcrypt.hash(password,10)    
+    const hashPassword = await bcrypt.hash(password,10)    
 
     if (req.method === 'POST') {
         try {

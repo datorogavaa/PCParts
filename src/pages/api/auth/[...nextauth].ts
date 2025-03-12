@@ -1,9 +1,12 @@
-import NextAuth from "next-auth"
-import GithubProvider from "next-auth/providers/github"
+import NextAuth from "next-auth";
+import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/lib/db";
 import { compare } from "bcryptjs";
+import { JWT } from "next-auth/jwt"; // Import JWT type
+import { Session, User } from "next-auth"; // Import Session and User types
+import { signIn } from "next-auth/react";
 
 export const authOptions = {
   providers: [
@@ -16,35 +19,50 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ''
     }),
     CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
       name: "Credentials",
-      // `credentials` is used to generate a form on the sign in page.
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
-      // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        email: { label: "email", type: "text", placeholder: "jsmith@gmail.com" },
+        email: { label: "Email", type: "text", placeholder: "jsmith@gmail.com" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials, req) {
-        // Add logic here to look up the user from the credentials supplied
-        const prismaUser = await prisma.user.findUnique({
-            where: {
-              email: credentials?.email
-            }
-        })
-  
-        if (prismaUser && await compare(prismaUser.password, credentials?.password || '')) {
-          return prismaUser
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials.password) {
+          return null; // If no credentials provided, reject the login attempt
+        }
+
+        try {
+          const user = await prisma.user.findUnique({
+            where: { email: credentials.email },
+          });
+
+          if (user && await compare(credentials.password, user.password)) {
+            return { id: user.id, email: user.email }; // Return user object on successful login
+          }
+
+          return null; // If user not found or password does not match
+        } catch (error) {
+          console.error("Error in authorize callback:", error);
+          return null; // Return null if any error occurs
         }
       }
     })
   ],
-  
-}
+  pages: {
+    error: '/auth/error', // Define custom error page if desired
+  },
+  callbacks: {
+    async jwt({ token, user }: { token: JWT, user?: User }) {
+      if (user) {
+        token.id = user.id as string; // Explicitly assert the type of 'user.id' as string
+      }
+      return token;
+    },
+    async session({ session, token }: { session: Session, token: JWT }) {
+      if (token) {
+        session.user.id = token.id as string; // Explicitly assert 'token.id' as string
+      }
+      return session;
+    }
+  }
+};
 
-export default NextAuth(authOptions)
+export default NextAuth(authOptions);

@@ -52,7 +52,8 @@ export default () => {
                 <span style={{cursor: 'pointer'}}><img onClick={func}  src="toggle-icon.png" alt="logo"/></span>
                     <Link style={{textDecoration: 'none'}} href="/"><h2 className={styles.siteName}>PC Parts</h2></Link>
                         <div>
-                            <Link href='signIn' className={styles.navbarA}><img src="user-icon.png"/></Link>
+                            {!session?.user ? <button style={{backgroundColor: '#6CB4EE', border: 'none', cursor: "pointer"}} onClick={signIn} className={styles.navbarA}><img src="user-icon.png"/>Sign In</button>
+                            :   <button onClick={signOut} className={styles.navbarA}><img src="user-icon.png"/>Sign Out</button> }
                             <Link className={styles.navbarA} href="/"><img src="bag-icon.png"/></Link>
                             <Link className={styles.navbarA} href="/"><img src="search-icon.png"/></Link>
                         </div>

@@ -24,8 +24,8 @@ export default () => {
             <div className={styles.ParentDivofProduct}>
             
             {
-                products.map((item: any) => (
-                        <div className={styles.Product}>
+                products.slice(0,10).map((item: any, key: any) => (
+                        <div key={key} className={styles.Product}>
                             <div className={styles.ProductFirstDiv}>
                             <Link href={`/products/${item.id}`}><h3 className={styles.ProductTitle}>{item.Name}</h3></Link>
                                 <h5 className={styles.ProductDescription}>{item.Description}</h5>
