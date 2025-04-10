@@ -51,7 +51,7 @@ export default () => {
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <button className={styles.loginButton} type="submit" >Sign Up</button>
                     <p style={{ fontSize: '16px', marginTop: '10px' }}>Already Have an Account? Log In ↓ </p>
-                    <Link href="/register">
+                    <Link href="http://localhost:3000/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2FsignUp">
                         <button className={styles.loginButton} type="button">Log In</button>
                     </Link>
                 </div>

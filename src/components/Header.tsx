@@ -54,6 +54,7 @@ export default () => {
                         <div>
                             {!session?.user ? <button style={{backgroundColor: '#6CB4EE', border: 'none', cursor: "pointer"}} onClick={signIn} className={styles.navbarA}><img src="user-icon.png"/>Sign In</button>
                             :   <button onClick={signOut} className={styles.navbarA}><img src="user-icon.png"/>Sign Out</button> }
+                            <Link className={styles.navbarA} href="/signUp">Sign Up</Link>
                             <Link className={styles.navbarA} href="/"><img src="bag-icon.png"/></Link>
                             <Link className={styles.navbarA} href="/"><img src="search-icon.png"/></Link>
                         </div>

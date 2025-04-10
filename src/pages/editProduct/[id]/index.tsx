@@ -1,18 +1,8 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 export default function EditProductForm() {
     const router = useRouter()
     const { id } = router.query
-    const [ product, setProduct ] = useState<any | null>(null) 
-    useEffect(() => {
-      async function getData() {
-        const data = await fetch(`/api/products/${id}`)
-        const response = await data.json()
-        setProduct(response)
-      }
-      getData()
-    },[id])
     return (
       <div
         style={{
@@ -31,7 +21,7 @@ export default function EditProductForm() {
           </h1>
           <div style={{ margin: "20px" }}>
             <input type="hidden" name="id" />
-            <label>დასახელება: </label>
+            <label>Name:</label>
             <br />
             <input
               name="name"
@@ -43,10 +33,9 @@ export default function EditProductForm() {
                 borderColor: "#f5ddb6",
                 backgroundColor: "#f5ddb6",
               }}
-              value={product ? product.Name: ''}
             />
             <br />
-            <label>აღწერა:</label>
+            <label>Description:</label>
             <br />
             <textarea
               name="description"
@@ -58,10 +47,9 @@ export default function EditProductForm() {
                 borderColor: "#f5ddb6",
                 backgroundColor: "#f5ddb6",
               }}
-              value={product ? product.Description: ''}
             />
             <br />
-            <label>ფასი:</label>
+            <label>Price:</label>
             <br />
             <input
               name="price"
@@ -74,12 +62,11 @@ export default function EditProductForm() {
                 borderColor: "#f5ddb6",
                 backgroundColor: "#f5ddb6",
               }}
-              value={product ? product.Price: ''}
+
             />
+          <label>Image Url:</label>
           <br></br>
-          <label>სურათის ლინკი:</label>
-          <br></br>
-          <input value={product ? product.Image: ''} name="image" style={{
+          <input name="image" style={{
             width: '300px',
             fontSize: '18px',
             height: '30px',
@@ -101,7 +88,7 @@ export default function EditProductForm() {
             }}
             type="submit"
           >
-            პროდუქტის რედაქტირება
+            Edit Product
           </button>
         </form>
       </div>
